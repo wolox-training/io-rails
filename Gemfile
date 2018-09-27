@@ -29,25 +29,27 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
-
+gem 'devise', '~> 4.5.0'
+gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'devise_token_auth'
+gem 'devise_token_auth', '~>1.0.0.rc2'
+gem 'factory_bot', '4.11.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'selenium-webdriver', '3.14.0'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
 
-  gem 'spring'
+  gem 'spring', '2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
 end

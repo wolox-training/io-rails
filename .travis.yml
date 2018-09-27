@@ -22,7 +22,7 @@ before_install:
 
 before_script:
   - psql -c "CREATE USER \"wbooksapi\" WITH PASSWORD 'wbooksapi';" -U postgres
-  - psql -c "DROP DATABASE IF EXISTS \"rails-bootstrap_test\";" -U postgres
+  - psql -c "DROP DATABASE IF EXISTS \"wbooks_test\";" -U postgres
   - psql -c "CREATE DATABASE \"wbooks_test\" ENCODING 'utf8';" -U postgres
   - bundle exec rake db:migrate
 
