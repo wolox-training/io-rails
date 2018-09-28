@@ -35,7 +35,8 @@ gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 # gem 'capistrano-rails', group: :development
 gem 'devise_token_auth', '~>1.0.0.rc2'
 gem 'factory_bot', '4.11.1'
-
+gem 'wor-paginate', '~> 0.1.4'
+gem 'active_model_serializers', '~> 0.10.7'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
