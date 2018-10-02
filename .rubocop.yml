@@ -1,0 +1,21 @@
+Documentation:
+  Enabled: false
+  LineLength:
+  Max: 99
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+LineLength:
+  Max: 99
+
+AllCops:
+  Exclude:
+    - lib/tasks/excels.rake
+    - spec/support/spec_helper.rb
+    - spec/rails_helper.rb
+    - db/**/*
+    - docs/**/*
+    - config/**/*
+    - bin/**/*
+    - Guardfile
