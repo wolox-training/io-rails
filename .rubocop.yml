@@ -20,4 +20,5 @@ AllCops:
     - bin/**/*
     - Guardfile
 Metrics/BlockLength:
-  Max: 50
+  Exclude:
+    - spec/**/*
