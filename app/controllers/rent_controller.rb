@@ -3,11 +3,20 @@ class RentController < ApplicationController
   include Wor::Paginate
 
   def create
-    rent = Rent.create(user_id: params[:user],
+    @rent = Rent.create(user_id: params[:user],
                        book_id: params[:book],
                        rent_date: params[:rent_date],
                        rent_end: params[:rent_end])
-    render json: rent
+
+    #mail = RentMailer.welcome_email(User.find(rent.user_id))
+    #mail = RentMailer.welcome_email(User.find(rent.user_id))
+
+    id = User.find(@rent.user_id).id
+
+    mail = RentMailer.welcome_email(id)
+    mail.deliver_later
+    render json: @rent
+
   end
 
   def list
