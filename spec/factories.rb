@@ -4,8 +4,8 @@ FactoryBot.define do
     author  { Faker::Book.author }
     title { Faker::Book.title }
     editor { Faker::Book.publisher }
-    image { "Image" }
-    year {Faker::Date}
+    image { 'Image' }
+    year { Faker::Date }
   end
 
   factory :user do
