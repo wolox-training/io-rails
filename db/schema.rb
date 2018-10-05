@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20181017190358) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "book_suggestions", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title", null: false
@@ -54,6 +55,8 @@ ActiveRecord::Schema.define(version: 20181017190358) do
     t.index ["user_id"], name: "index_book_suggestions_on_user_id"
   end
 
+=======
+>>>>>>> bedf694... Added admin
   create_table "books", force: :cascade do |t|
     t.string "genre"
     t.string "author"

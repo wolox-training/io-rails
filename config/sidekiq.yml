@@ -3,3 +3,12 @@
 :queues:
   - default
   - mailers
+  - RememberMailWorker
+  - ExpirationMailWorker
+:schedule:
+  RememberMailWorker:
+    cron: '0 0 21 * * * America/Argentina/Buenos_Aires'
+    queue: RememberMailWorker
+  ExpirationMailWorker:
+    cron: '0 0 9 * * * America/Argentina/Buenos_Aires'
+    queue: ExpirationMailWorker
