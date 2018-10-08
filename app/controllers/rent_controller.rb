@@ -11,7 +11,7 @@ class RentController < ApplicationController
     #mail = RentMailer.welcome_email(User.find(rent.user_id))
     #mail = RentMailer.welcome_email(User.find(rent.user_id))
 
-    id = @rent.user_id
+
 
     mail = RentMailer.welcome_email(@rent)
     mail.deliver_later
