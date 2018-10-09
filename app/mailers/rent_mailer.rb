@@ -7,7 +7,7 @@ class RentMailer < ApplicationMailer
       format.text
       format.html
     end
-    end
+  end
 
   def rent_email(rent)
     @user = User.find(rent.user_id)
