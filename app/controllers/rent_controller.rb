@@ -1,18 +1,16 @@
 class RentController < ApplicationController
-  include DeviseTokenAuth::Concerns::SetUserByToken
-  include Wor::Paginate
+  # include DeviseTokenAuth::Concerns::SetUserByToken
+  # include Wor::Paginate
 
   def create
     @rent = Rent.create(user_id: params[:user],
-                       book_id: params[:book],
-                       rent_date: params[:rent_date],
-                       rent_end: params[:rent_end])
-
+                        book_id: params[:book],
+                        rent_date: params[:rent_date],
+                        rent_end: params[:rent_end])
 
     mail = RentMailer.rent_email(@rent)
     mail.deliver_later
     render json: @rent
-
   end
 
   def list

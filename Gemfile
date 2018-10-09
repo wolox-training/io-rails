@@ -8,7 +8,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'dotenv-rails','~> 2.5.0' , groups: [:development, :test]
+gem 'dotenv-rails', '~> 2.5.0', groups: %i[development test]
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -39,7 +39,6 @@ gem 'factory_bot', '4.11.1'
 gem 'wor-paginate', '~> 0.1.4'
 
 gem 'sidekiq'
-
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
