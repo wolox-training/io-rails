@@ -8,12 +8,8 @@ class RentController < ApplicationController
                        rent_date: params[:rent_date],
                        rent_end: params[:rent_end])
 
-    #mail = RentMailer.welcome_email(User.find(rent.user_id))
-    #mail = RentMailer.welcome_email(User.find(rent.user_id))
 
-
-
-    mail = RentMailer.welcome_email(@rent)
+    mail = RentMailer.rent_email(@rent)
     mail.deliver_later
     render json: @rent
 
