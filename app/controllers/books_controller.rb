@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     render_paginated Book.all
   end
 
-  def shows
+  def show
     render json: Book.find(params[:id])
   end
 end
