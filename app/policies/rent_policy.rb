@@ -1,15 +1,12 @@
 class RentPolicy
-  attr_reader :rent
+  attr_reader :user, :rent
 
-  def initialize (rent)
+  def initialize(user, rent)
+    @user = user
     @rent = rent
-
   end
 
   def show?
-    if 6 == rent.user_id
-    end
-    byebug
+    user.id == rent.user_id
   end
-
 end
