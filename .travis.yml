@@ -28,7 +28,8 @@ before_script:
 
 script:
   - bundle exec rubocop app spec -R --format simple
-  
+  - bundle exec rspec --format documentation
+
 
 #notifications:
 #  email:

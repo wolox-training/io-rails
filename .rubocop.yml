@@ -1,6 +1,6 @@
 Documentation:
   Enabled: false
-  LineLength:
+LineLength:
   Max: 99
 
 FrozenStringLiteralComment:
@@ -19,3 +19,6 @@ AllCops:
     - config/**/*
     - bin/**/*
     - Guardfile
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
