@@ -33,14 +33,14 @@ describe BooksController do
     end
   end
 
-  describe 'GET #shows' do
+  describe 'GET #show' do
     context 'with an authenticated user' do
       include_context 'Authenticated User'
       context 'When fetching a book id' do
         let!(:book) { FactoryBot.create(:book) }
 
         before do
-          get :shows, params: { id: book.id }
+          get :show, params: { id: book.id }
         end
 
         it 'responses with the book id json' do
@@ -57,7 +57,7 @@ describe BooksController do
 
     context 'without an authenticated user' do
       before do
-        get :shows
+        get :show
       end
       it 'responds with 401 status' do
         expect(response).to have_http_status(401)
