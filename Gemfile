@@ -41,13 +41,14 @@ gem 'factory_bot', '~> 4.11.1'
 gem 'sidekiq', '~> 5.2.2'
 gem 'wor-paginate', '~> 0.1.4'
 gem "pundit", '~> 2.0.0'
-
+gem 'httparty'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 3.8'
   gem 'selenium-webdriver', '3.14.0'
+
 end
 
 group :development do
