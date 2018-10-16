@@ -7,7 +7,7 @@ FrozenStringLiteralComment:
   Enabled: false
 
 LineLength:
-  Max: 99
+  Max: 110
 
 AllCops:
   Exclude:

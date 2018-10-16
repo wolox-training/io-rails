@@ -8,10 +8,8 @@ class BooksController < ApiController
     render json: Book.find(params[:id])
   end
 
-
   def test
     response = OpenLibraryService.new.book_info(params[:isbn])
     render json: response
-
   end
 end
