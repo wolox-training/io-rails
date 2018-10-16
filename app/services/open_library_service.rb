@@ -18,6 +18,7 @@ class ParsedResponse
   @isbn = isbn
   @title = generate_title(parsed)
   @subtitle = generate_subtitle(parsed)
+  @pags = generate_pags(parsed)
   @authors = generate_authors(parsed)
 
   end
@@ -32,5 +33,9 @@ class ParsedResponse
 
   def generate_authors(parsed)
     parsed["ISBN:#{@isbn}"]["authors"].map{|author| author["name"]}
+  end
+
+  def generate_pags(parsed)
+    parsed["ISBN:#{@isbn}"]["number_of_pages"]
   end
 end
