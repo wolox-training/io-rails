@@ -5,6 +5,7 @@ class RentsController < ApplicationController
 
   def create
     rent = Rent.new(create_params.merge(user: current_user) )# with this we can be sure the rent will be associated to the current_user
+    rent.save
 
     if rent.save
       mail = RentMailer.rent_email(rent)
@@ -15,12 +16,12 @@ class RentsController < ApplicationController
     end
   end
 
-
-
-
-  def index
-    render_paginated Rent.where('user_id=' + current_user.id.to_s)
+  def create_params
+    params_permitted = params.permit(:book_id, :rent_date, :rent_end)
   end
 
+  def show
+    render_paginated Rent.where('user_id=' + current_user.id.to_s)
+  end
 
 end

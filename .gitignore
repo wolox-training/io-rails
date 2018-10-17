@@ -24,5 +24,5 @@
 /yarn-error.log
 
 .byebug_history
-
+.dump.rdb
 .env
