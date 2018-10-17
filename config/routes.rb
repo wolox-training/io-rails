@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   mount_devise_token_auth_for 'User', at: 'auth'
   resources :books, only: [:index, :show]
-  resources :rent, only: [:list, :create]
+  resources :rents, only: [:index]
 
   #get 'rent', to: 'rent#list'
-  #post 'rent/create', to: 'rent#create'
+  post 'rents/create', to: 'rents#create'
+  get 'rents/index', to: 'rents#index'
 end
