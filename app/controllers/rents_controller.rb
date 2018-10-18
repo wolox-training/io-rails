@@ -8,9 +8,7 @@ class RentsController < ApplicationController
       mail.deliver_later
       render json: rent
     else
-      rent.valid?
       render json: { errors: rent.errors.full_messages }, status: :unprocessable_entity
-
     end
   end
 
@@ -19,6 +17,6 @@ class RentsController < ApplicationController
   end
 
   def index
-    render_paginated Rent.where('user_id=' + current_user.id.to_s)
+    render_paginated current_user.rents
   end
 end
