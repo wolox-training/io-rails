@@ -34,13 +34,9 @@ gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'active_model_serializers', '~> 0.10.7'
-gem 'activeadmin', '~> 1.3.1'
-gem 'devise_token_auth', '~> 1.0.0.rc2'
-gem 'factory_bot', '4.11.1'
-<<<<<<< HEAD
-=======
-gem 'sidekiq', '~> 5.2.2'
->>>>>>> 6d55fa2... Fixes in review of pr added
+
+gem 'devise_token_auth', '~>1.0.0.rc2'
+gem 'factory_bot', '~> 4.11.1'
 gem 'wor-paginate', '~> 0.1.4'
 gem 'activeadmin', '~> 1.3.1'
 gem 'sidekiq','~> 5.2.2'

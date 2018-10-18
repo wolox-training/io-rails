@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20181010175313) do
-=======
-ActiveRecord::Schema.define(version: 20181009210343) do
->>>>>>> bedf694... Added admin
+ActiveRecord::Schema.define(version: 20181017190358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +39,19 @@ ActiveRecord::Schema.define(version: 20181009210343) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "book_suggestions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title", null: false
+    t.string "author", null: false
+    t.float "price"
+    t.string "synopsis", null: false
+    t.string "year", null: false
+    t.string "publisher", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_book_suggestions_on_user_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -91,6 +100,7 @@ ActiveRecord::Schema.define(version: 20181009210343) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "book_suggestions", "users"
   add_foreign_key "rents", "books"
   add_foreign_key "rents", "users"
 end
