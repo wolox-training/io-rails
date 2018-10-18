@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= t('mail.hello') %>  <%= @user.first_name  %></h1>
+
+    <p>
+      Here is the information of the rent:<br>
+      Starts : <%= @rent.rent_date %>.<br>
+      Ends : <%= @rent.rent_end %>.<br>
+      Book is : <%= @book.title %>.
+    </p>
+    <p>
+
+    </p>
+    <p>Thanks for using WbooksApi!</p>
+  </body>
+</html>

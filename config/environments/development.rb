@@ -1,4 +1,5 @@
 Rails.application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -11,6 +12,11 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  config.active_job.queue_adapter = :sidekiq
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -25,6 +31,16 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => Rails.application.secrets.mailer_user_name,
+    :password => Rails.application.secrets.mailer_pass,
+    :address => Rails.application.secrets.mailer_mail_address,
+    :domain => Rails.application.secrets.mailer_domain,
+    :port => Rails.application.secrets.mailer_port,
+    :authentication => :cram_md5
+  }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

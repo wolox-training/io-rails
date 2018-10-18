@@ -8,7 +8,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
-
+gem 'dotenv-rails', '~> 2.5.0', groups: %i[development test]
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -37,6 +37,9 @@ gem 'active_model_serializers', '~> 0.10.7'
 gem 'devise_token_auth', '~>1.0.0.rc2'
 gem 'factory_bot', '4.11.1'
 gem 'wor-paginate', '~> 0.1.4'
+
+gem 'sidekiq', '~> 5.2.2'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
