@@ -34,7 +34,6 @@ describe BooksController do
   end
 
   describe 'GET #show' do
-<<<<<<< HEAD
     context 'with an authenticated user' do
       include_context 'Authenticated User'
 
@@ -54,13 +53,6 @@ describe BooksController do
         it 'responds with 200 status' do
           expect(response).to have_http_status(:ok)
         end
-=======
-    context 'When fetching a book id' do
-      let!(:book) { FactoryBot.create(:book) }
-
-      before do
-        get :show, params: { id: book.id }
->>>>>>> 47dd7ef... Changes in pr added (parsed response in ohter file)
       end
     end
 

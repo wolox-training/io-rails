@@ -322,7 +322,7 @@ DEPENDENCIES
   devise (~> 4.5.0)
   devise_token_auth (~> 1.0.0.rc2)
   dotenv-rails (~> 2.5.0)
-  factory_bot (~> 4.11.1)
+  factory_bot (= 4.11.1)
   faker!
   httparty (~> 0.16.2)
   jbuilder (~> 2.5)
