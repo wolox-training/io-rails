@@ -1,27 +1,24 @@
 class RentsController < ApplicationController
-
-  #before_action :authenticate_user!
-
+  before_action :authenticate_user!
 
   def create
-    rent = Rent.new(create_params.merge(user: current_user) )# with this we can be sure the rent will be associated to the current_user
-    rent.save
-
+    rent = Rent.new(create_params.merge(user: current_user))
     if rent.save
       mail = RentMailer.rent_email(rent)
       mail.deliver_later
       render json: rent
     else
-      puts "Sad path"
+      rent.valid?
+      render json: { errors: rent.errors.full_messages }, status: :unprocessable_entity
+
     end
   end
 
   def create_params
-    params_permitted = params.permit(:book_id, :rent_date, :rent_end)
+    params.permit(:book_id, :rent_date, :rent_end)
   end
 
-  def show
+  def index
     render_paginated Rent.where('user_id=' + current_user.id.to_s)
   end
-
 end
