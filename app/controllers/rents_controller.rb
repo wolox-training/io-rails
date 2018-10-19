@@ -23,6 +23,6 @@ class RentsController < ApiController
   def show
     @rent = Rent.find(params[:rent_id])
     authorize @rent
-    render_paginated json: @rent
+    render json: @rent
   end
 end
