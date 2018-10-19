@@ -1,5 +1,7 @@
 class BooksController < ApiController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
+  require 'json'
+
   def index
     render_paginated Book.all
   end
@@ -9,7 +11,6 @@ class BooksController < ApiController
   end
 
   def from_api
-    response = OpenLibraryService.new.book_info(params[:isbn])
-    render json: response
+    render json: OpenLibraryService.new.book_info(params[:isbn]).as_json
   end
 end
