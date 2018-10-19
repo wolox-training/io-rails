@@ -4,7 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :rents, dependent: :destroy
-  has_many :book_suggestions,dependent: :nullify
+  has_many :book_suggestions, dependent: :nullify
 
   has_many :books, through: :rents
   validates :first_name, :last_name, presence: true
