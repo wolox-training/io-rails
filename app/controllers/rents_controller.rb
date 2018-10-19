@@ -1,4 +1,4 @@
-class RentsController < ApplicationController
+class RentsController < ApiController
   before_action :authenticate_user!
 
   def create
