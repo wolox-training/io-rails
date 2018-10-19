@@ -19,4 +19,10 @@ class RentsController < ApiController
   def index
     render_paginated current_user.rents
   end
+
+  def show
+    @rent = Rent.find(params[:rent_id])
+    authorize @rent
+    render_paginated json: @rent
+  end
 end
