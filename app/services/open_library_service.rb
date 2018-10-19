@@ -6,5 +6,4 @@ class OpenLibraryService
     )
     ParsedResponse.new(param, response.parsed_response)
   end
-
 end

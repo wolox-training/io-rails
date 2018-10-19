@@ -1,5 +1,5 @@
 class BooksController < ApiController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   require 'json'
 
   def index
