@@ -1,6 +1,5 @@
 class BooksController < ApiController
   before_action :authenticate_user!
-  require 'json'
 
   def index
     render_paginated Book.all

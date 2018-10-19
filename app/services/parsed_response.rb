@@ -22,4 +22,8 @@ class ParsedResponse
   def generate_pags(parsed)
     parsed["ISBN:#{@isbn}"]['number_of_pages']
   end
+
+  def my_json
+    { "isbn": @isbn, "title": @title, "subtitle": @subtitle, "pags": @pags, "authors": @authors }
+  end
 end

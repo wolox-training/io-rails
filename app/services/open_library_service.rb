@@ -4,6 +4,6 @@ class OpenLibraryService
       "#{Rails.application.secrets[:url_ext_api]}/books"\
       "?bibkeys=ISBN:#{param}&format=json&jscmd=data"
     )
-    ParsedResponse.new(param, response.parsed_response)
+    ParsedResponse.new(param, response.parsed_response).my_json
   end
 end
