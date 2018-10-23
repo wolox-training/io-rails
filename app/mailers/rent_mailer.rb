@@ -1,5 +1,4 @@
 class RentMailer < ApplicationMailer
-
   def rent_email(rent)
     @user = User.find(rent.user_id)
     @rent = rent
@@ -20,5 +19,4 @@ class RentMailer < ApplicationMailer
     @book = rent.book
     mail(to: @user.email, subject: 'Book Expiration')
   end
-
 end

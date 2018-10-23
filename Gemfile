@@ -11,7 +11,6 @@ gem 'rails', '~> 5.1.6'
 
 gem 'dotenv-rails', '~> 2.5.0', groups: %i[development test]
 
-
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
