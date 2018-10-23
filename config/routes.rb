@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   mount_devise_token_auth_for 'User', at: 'auth'
-  resources :books, only: [:index, :show] do
+  resources :books, only: [:index, :show, :from_api] do
     collection do
       get :from_api
     end

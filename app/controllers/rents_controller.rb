@@ -1,6 +1,4 @@
 class RentsController < ApiController
-  before_action :authenticate_user!
-
   def create
     rent = Rent.new(create_params.merge(user: current_user))
     if rent.save

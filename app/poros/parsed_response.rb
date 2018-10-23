@@ -3,9 +3,15 @@ class ParsedResponse
     @isbn = isbn
     @title = generate_title(parsed)
     @subtitle = generate_subtitle(parsed)
-    @pags = generate_pags(parsed)
+    @pages = generate_pags(parsed)
     @authors = generate_authors(parsed)
   end
+
+  def my_json
+    { isbn: @isbn, title: @title, subtitle: @subtitle, pags: @pags, authors: @authors }
+  end
+
+  private
 
   def generate_title(parsed)
     parsed["ISBN:#{@isbn}"]['title']
@@ -21,9 +27,5 @@ class ParsedResponse
 
   def generate_pags(parsed)
     parsed["ISBN:#{@isbn}"]['number_of_pages']
-  end
-
-  def my_json
-    { "isbn": @isbn, "title": @title, "subtitle": @subtitle, "pags": @pags, "authors": @authors }
   end
 end
