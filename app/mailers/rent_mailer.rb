@@ -7,7 +7,6 @@ class RentMailer < ApplicationMailer
          subject: 'Book Rent')
   end
 
-
   def rent_remember(rent)
     @user = User.find(rent.user_id)
     @rent = rent
