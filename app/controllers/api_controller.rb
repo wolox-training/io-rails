@@ -5,6 +5,6 @@ class ApiController < ApplicationController
   rescue_from ActionController::ParameterMissing, with: :show_errors
 
   def show_errors
-    render json: "Parameter can't be blank"
+    render json: "Parameter can't be blank", status: :bad_request
   end
 end
